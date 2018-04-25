@@ -26,10 +26,12 @@ body
 	font-family:Brush Script MT;
 	font-size: 100px;
 	font-weight: 250;
+	text-shadow:-1px 0 #e67e22, 0 3px #e67e22, 3px 0 #e67e22, 0 -1px #e67e22;
 	margin-top: 100px;
-	color: #FF9800;
+	color: white;
 	/*text-transform:uppercase ;*/
 	margin-bottom: 90px;
+
 
 }
 
@@ -95,7 +97,11 @@ body
 	color:white;
 }
 
-.offer h1
+.Gallery h1:after
 {
-	
+	content::;
+	widows: 100px;
+	height: 2px;
+	background-color:#e67e22;
+	position:absolute;
 }
