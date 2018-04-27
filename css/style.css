@@ -16,7 +16,7 @@ body
 
 
 .header{
-	background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(..//images/front_1.jpg);
+	position: relative;
 	height: 100vh; 
 	background-position:center;
 	background-size: cover;
@@ -43,16 +43,68 @@ body
 
 .header img
 {
-
-	margin-bottom:80px;
-
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width:100%;
+	height: 100vh;
+	z-index: 1;
 }
+
+#cf img
+{
+	animation-name:cf3FadeInOut;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count:infinite;
+	animation-duration:13s;
+	animation-direction:alternate;
+	position:absolute;  
+}
+
+#cf img:nth-of-type(1)
+{
+	animation-delay:12s;
+}
+
+#cf img:nth-of-type(2)
+{
+	animation-delay:8s;
+}
+
+#cf img:nth-of-type(3)
+{
+	animation-delay:4s;
+}
+
+@keyframes cf3FadeInOut
+{
+	0%
+	{
+		opacity:1;
+	}
+
+	25%
+	{
+		opacity:0;
+	}
+
+	75%
+	{
+		opacity:0;
+	}
+	100%
+	{
+		opacity:1;
+	}
+}
+
+
 
 
 
 .header-buttons a
 {
-	border:2px solid #e67e22;
+	border:3px solid #ffffff;
 	padding:10px 60px; /*TR (10px) BL(30px)*/
 	margin-right: 15px;
 	color: white;
@@ -71,9 +123,36 @@ body
 
 }
 
-.navbar-custom
+
+
+header .navbar-custom .navbar-collapse .navbar-right 
 {
 	background: transparent;
+	position: absolute;
+	right: 30px;
+	top: 0px;
+	z-index: 2;
+}
+
+header .navbar-custom .navbar-header a.navbar-brand
+{
+	color: #fff;
+	z-index:2;
+	position: absolute; 
+	left: 10px;
+	font-family:Brush Script MT;
+	font-size: 45px; 
+	left:20px;
+
+}
+
+
+
+header .header-desc{
+	position: absolute;
+	left: 35%;
+	top:100px;
+	z-index: 2;
 }
 
  .icon-bar
@@ -95,13 +174,106 @@ body
 .navbar-brand
 {
 	color:white;
+
 }
 
-.Gallery h1:after
+
+.about h1:after
 {
-	content::;
-	widows: 100px;
-	height: 2px;
+	content:"";
+	width: 120px; 
+	height: 3px;
 	background-color:#e67e22;
 	position:absolute;
+	bottom:-85px; 
+	margin-left:-100px;
+}
+
+.description
+{
+	margin-top:20px;
+	font-size:20px;
+	margin-bottom: 45px;
+}
+
+.about h2.topic-2
+{
+	font-family:Brush Script MT;
+	font-weight: bold;
+	font-size:65px;
+	text-align: center;
+	margin-left: 5px;
+
+}
+
+.about h1.topic-1
+{
+	font-family:Brush Script MT;
+	font-size:60px;
+}
+
+
+
+
+
+
+
+/*========== Responsive parts==================*/
+
+@media (max-width: 800px) 
+{
+	header .navbar-custom .navbar-header .navbar-toggle 
+	{
+		position: absolute;
+		right: 10px;
+		top: 0px;
+		z-index: 2;
+	}
+
+	header .header-desc
+	{
+		position: absolute;
+		left: 15%;
+		top:40px;
+		z-index: 2;
+	}
+
+	header .header-desc .main-heading h1
+	{
+		font-size: 30px;
+	}
+
+	header .header-desc .header-buttons a
+	{
+		font-size: 10px;
+		padding:8px 50px;
+		margin-top:10px;
+
+
+	}
+
+	header .navbar-custom .navbar-header a.navbar-brand
+	{
+		position: absolute;;
+		left:5%;
+		top: 0px;
+		font-size:20px;
+	}
+
+	.description
+	{
+		position: absolute;
+		font-size:10px;
+	}
+}
+
+@media (max-width: 400px)
+ {
+	header .header-desc
+	{
+		position: absolute;
+		left: 10%;
+		top:40px;
+		z-index: 2;
+	}
 }
